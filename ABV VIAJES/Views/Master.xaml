@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ABV_VIAJES.Master"
+             Title="Master"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Viajes" x:Name="btnViajes"  ImageSource="viajes.png" Clicked="btnViajes_Clicked"/>
+            <Button Text="Restaurantes" x:Name="btnRestaurantes" ImageSource="restaurante.png" Clicked="btnRestaurantes_Clicked"/>
+            <Button Text="Bares" x:Name="btnBares"  ImageSource="bar.png" Clicked="btnBares_Clicked"/>
+            <Button Text="Hoteles" x:Name="btnHoteles"  ImageSource="hotel.png" Clicked="btnHoteles_Clicked"/>
+            <Button Text="Compras" x:Name="btnCompras"  ImageSource="compras.png" Clicked="btnCompras_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
