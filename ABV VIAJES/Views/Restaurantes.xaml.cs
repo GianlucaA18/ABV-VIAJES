@@ -16,5 +16,11 @@ namespace ABV_VIAJES.Views
         {
             InitializeComponent();
         }
+
+        private async void OnRestauranteTapped(object sender, EventArgs e)
+        {
+            string googleMapsLink = "https://www.google.com/maps?q=40.7128,-74.0060";
+            await Navigation.PushAsync(new DitailRestaurante(googleMapsLink));
+        }
     }
 }

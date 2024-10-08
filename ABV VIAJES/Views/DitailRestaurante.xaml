@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ABV_VIAJES.Views.DitailRestaurante">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" BackgroundColor="#f9f9f9">
+                <!-- Título de la página -->
+                <Label Text="Detalles del Restaurante"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0,10"
+                       TextColor="#007ACC"/>
+
+                <!-- Nombre del restaurante -->
+                <Label Text="Restaurante El Sabor"
+                       FontSize="18"
+                       FontAttributes="Italic"
+                       HorizontalOptions="Center"
+                       TextColor="#555"
+                       Margin="0,0,0,10" />
+
+                <!-- Separador -->
+                <BoxView HeightRequest="1" BackgroundColor="#007ACC" Margin="0,10" />
+
+                <!-- Detalles del restaurante -->
+                <StackLayout Margin="0,10">
+                    <Label Text="Tipo: Comida Mexicana"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#007ACC"
+                           Margin="0,5" 
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="Estrellas: ⭐⭐⭐⭐☆"
+                           FontSize="18"
+                           TextColor="Gold"
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="Ubicación: Ciudad de México, Av. Siempre Viva 123"
+                           FontSize="16"
+                           TextColor="#333"
+                           Margin="0,5" 
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <!-- Imagen del restaurante -->
+                <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Padding="0" Margin="0,10">
+                    <Image Source="lugar.jpg"
+                           HeightRequest="200"
+                           Aspect="AspectFill"
+                           HorizontalOptions="FillAndExpand" />
+                </Frame>
+
+                <!-- WebView para mostrar el mapa -->
+                <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Padding="0" Margin="0,10">
+                    <WebView x:Name="mapWebView"
+                             HeightRequest="400"
+                             VerticalOptions="FillAndExpand" />
+                </Frame>
+
+                <!-- Botón para reservar -->
+                <Button Text="Reservar Mesa"
+                        BackgroundColor="#1ABC9C"
+                        TextColor="White"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        Margin="0,20,0,0"
+                        HorizontalOptions="Center"
+                        CornerRadius="25" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

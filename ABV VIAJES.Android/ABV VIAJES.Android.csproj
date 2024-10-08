@@ -84,7 +84,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\lugar.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ABV VIAJES\ABV VIAJES.csproj">
       <Project>{CBDCC939-5E58-497E-9BDF-117191753845}</Project>

@@ -5,13 +5,59 @@
              Title="Master"
              >
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Viajes" x:Name="btnViajes"  ImageSource="viajes.png" Clicked="btnViajes_Clicked"/>
-            <Button Text="Restaurantes" x:Name="btnRestaurantes" ImageSource="restaurante.png" Clicked="btnRestaurantes_Clicked"/>
-            <Button Text="Bares" x:Name="btnBares"  ImageSource="bar.png" Clicked="btnBares_Clicked"/>
-            <Button Text="Hoteles" x:Name="btnHoteles"  ImageSource="hotel.png" Clicked="btnHoteles_Clicked"/>
-            <Button Text="Compras" x:Name="btnCompras"  ImageSource="compras.png" Clicked="btnCompras_Clicked"/>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <!-- Fondo para el título de la empresa -->
+            <Frame BackgroundColor="#007ACC" Padding="0,60" HasShadow="False">
+                <Label Text="ABV"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       TextColor="#fff" />
+            </Frame>
 
+            <!-- Simulando botones sin Frame -->
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="20" BackgroundColor="Transparent">
+                    <Image Source="viajes.png" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                    <Label Text="Viajes" VerticalOptions="Center" HorizontalOptions="Start" FontSize="18" TextColor="#007ACC" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnViajes_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="20" BackgroundColor="Transparent">
+                    <Image Source="restaurante.png" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                    <Label Text="Restaurantes" VerticalOptions="Center" HorizontalOptions="Start" FontSize="18" TextColor="#007ACC" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnRestaurantes_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="20" BackgroundColor="Transparent">
+                    <Image Source="bar.png" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                    <Label Text="Bares" VerticalOptions="Center" HorizontalOptions="Start" FontSize="18" TextColor="#007ACC" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnBares_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="20" BackgroundColor="Transparent">
+                    <Image Source="hotel.png" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                    <Label Text="Hoteles" VerticalOptions="Center" HorizontalOptions="Start" FontSize="18" TextColor="#007ACC" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnHoteles_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="20" BackgroundColor="Transparent">
+                    <Image Source="compras.png" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                    <Label Text="Compras" VerticalOptions="Center" HorizontalOptions="Start" FontSize="18" TextColor="#007ACC" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="btnCompras_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

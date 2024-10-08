@@ -3,10 +3,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ABV_VIAJES.Views.Hoteles">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20">
+            <!-- Título y nombre de la empresa -->
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                <Label Text="Descubre los Mejores Hoteles"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       TextColor="#007ACC"
+                       HorizontalOptions="Center" />
+                <Label Text="ABV VIAJES"
+                       FontSize="24"
+                       FontAttributes="Italic"
+                       TextColor="#555"
+                       HorizontalOptions="Center" />
+                <BoxView HeightRequest="1" BackgroundColor="#007ACC" Margin="0,10" />
+            </StackLayout>
+
+            <ScrollView>
+                <StackLayout>
+                    <!-- Bloque de restaurante -->
+                    <Frame HasShadow="True" CornerRadius="20" Padding="0" Margin="0,10">
+                        <StackLayout>
+                            <Image Source="lugar.jpg" Aspect="AspectFill" HeightRequest="150" />
+                            <StackLayout Padding="10">
+                                <Label Text="Hotel 1"
+                                       TextColor="Black"
+                                       FontSize="24"
+                                       HorizontalOptions="Start" 
+                                       Margin="0,0,0,5" />
+                                <Label Text="⭐⭐⭐⭐☆"
+                                       TextColor="Gold"
+                                       FontSize="18"
+                                       HorizontalOptions="Start" 
+                                       Margin="0,0,0,5" />
+                            </StackLayout>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHotelesTapped" CommandParameter="Hotel1" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <!-- Repite el bloque para cada restaurante -->
+                    <Frame HasShadow="True" CornerRadius="20" Padding="0" Margin="0,10">
+                        <StackLayout>
+                            <Image Source="lugar.jpg" Aspect="AspectFill" HeightRequest="150" />
+                            <StackLayout Padding="10">
+                                <Label Text="Hotel 2"
+                                       TextColor="Black"
+                                       FontSize="24"
+                                       HorizontalOptions="Start" 
+                                       Margin="0,0,0,5" />
+                                <Label Text="⭐⭐⭐⭐⭐"
+                                       TextColor="Gold"
+                                       FontSize="18"
+                                       HorizontalOptions="Start" 
+                                       Margin="0,0,0,5" />
+                            </StackLayout>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnHotelesTapped" CommandParameter="Hotel2" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <!-- Continúa agregando más bloques -->
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
