@@ -22,5 +22,7 @@ namespace ABV_VIAJES.Views
             string googleMapsLink = "https://www.google.com/maps?q=40.7128,-74.0060"; // Sustituye esto por el enlace real de tu API
             await Navigation.PushAsync(new DetailViajes(googleMapsLink));
         }
+
+       
     }
 }

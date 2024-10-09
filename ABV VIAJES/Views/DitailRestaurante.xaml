@@ -47,7 +47,7 @@
 
                 <!-- Imagen del restaurante -->
                 <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Padding="0" Margin="0,10">
-                    <Image Source="lugar.jpg"
+                    <Image Source="imgrestaurante.jpg"
                            HeightRequest="200"
                            Aspect="AspectFill"
                            HorizontalOptions="FillAndExpand" />

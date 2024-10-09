@@ -50,7 +50,7 @@
             <!-- Imagen del lugar -->
             <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Padding="0">
                 <Image x:Name="lugarImage"
-                       Source="lugar.jpg"
+                       Source="piramides.webp"
                        HeightRequest="200"
                        Aspect="AspectFill"
                        HorizontalOptions="FillAndExpand" />
@@ -62,7 +62,15 @@
                          HeightRequest="400"
                          VerticalOptions="FillAndExpand" />
             </Frame>
-        </StackLayout>
+                <Button Text="Reservar Viaje"
+                        BackgroundColor="#1ABC9C"
+                        TextColor="White"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        Margin="0,20,0,0"
+                        HorizontalOptions="Center"
+                        CornerRadius="25" />
+            </StackLayout>
        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

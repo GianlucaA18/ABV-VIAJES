@@ -24,7 +24,7 @@
                     <!-- Bloque de restaurante -->
                     <Frame HasShadow="True" CornerRadius="20" Padding="0" Margin="0,10">
                         <StackLayout>
-                            <Image Source="lugar.jpg" Aspect="AspectFill" HeightRequest="150" />
+                            <Image Source="imgcompras.jpg" Aspect="AspectFill" HeightRequest="150" />
                             <StackLayout Padding="10">
                                 <Label Text="Tienda 1"
                                        TextColor="Black"
@@ -46,7 +46,7 @@
                     <!-- Repite el bloque para cada restaurante -->
                     <Frame HasShadow="True" CornerRadius="20" Padding="0" Margin="0,10">
                         <StackLayout>
-                            <Image Source="lugar.jpg" Aspect="AspectFill" HeightRequest="150" />
+                            <Image Source="imgcompras.jpg" Aspect="AspectFill" HeightRequest="150" />
                             <StackLayout Padding="10">
                                 <Label Text="Tienda 2"
                                        TextColor="Black"
