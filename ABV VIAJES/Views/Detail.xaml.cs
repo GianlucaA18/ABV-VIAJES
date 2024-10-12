@@ -16,5 +16,10 @@ namespace ABV_VIAJES.Views
         {
             InitializeComponent();
         }
+
+        private async void OnViajeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Viajes());
+        }
     }
 }

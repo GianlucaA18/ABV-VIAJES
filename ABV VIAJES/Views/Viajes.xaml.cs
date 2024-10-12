@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ABV_VIAJES.Model;
+using ABV_VIAJES.ModelView;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,12 +19,25 @@ namespace ABV_VIAJES.Views
             InitializeComponent();
         }
 
-        private async void OnLugarTapped(object sender, EventArgs e)
+        private async void OnLugarTapped(object sender, SelectionChangedEventArgs e)
         {
-            string googleMapsLink = "https://www.google.com/maps?q=40.7128,-74.0060"; // Sustituye esto por el enlace real de tu API
-            await Navigation.PushAsync(new DetailViajes(googleMapsLink));
-        }
+            if (e.CurrentSelection.Count > 0)
+            {
+                var lugarSeleccionado = e.CurrentSelection.FirstOrDefault() as Viaje;
 
-       
+                if (lugarSeleccionado != null)
+                {
+                    var detailPage = new DetailViajes
+                    {
+                        BindingContext = lugarSeleccionado // Asigna el lugar seleccionado como contexto de datos
+                    };
+
+                    // Establece la URL del WebView con el enlace de Google Maps
+                    detailPage.SetMapLocation(lugarSeleccionado.GoogleMapsLink);
+
+                    await Navigation.PushAsync(detailPage);
+                }
+            }
+        }
     }
 }

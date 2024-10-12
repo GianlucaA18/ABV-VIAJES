@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ABV_VIAJES.Views.Viajes">
+             xmlns:vm="clr-namespace:ABV_VIAJES.ModelView"
+             x:Class="ABV_VIAJES.Views.Viajes"
+             Title="Explora el Mundo">
+    <!-- Conexión con el ViewModel -->
+    <ContentPage.BindingContext>
+        <vm:ViajesViewModel />
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout Padding="20">
             <!-- Título y nombre de la empresa -->
@@ -19,101 +26,43 @@
                 <BoxView HeightRequest="1" BackgroundColor="#007ACC" Margin="0,10" />
             </StackLayout>
 
-            <ScrollView>
-                <StackLayout>
-                    <!-- Repite este bloque para cada lugar -->
-                    <Frame HasShadow="True" CornerRadius="20" Padding="0" Margin="0,10">
-                        <Grid>
-                            <!-- Imagen de fondo redondeada -->
-                            <Image Source="piramides.webp" Aspect="AspectFill" />
+            <!-- CollectionView para mostrar los lugares turísticos -->
+            <CollectionView ItemsSource="{Binding Viajes}" SelectionMode="Single" SelectionChanged="OnLugarTapped">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame HasShadow="True" CornerRadius="20" Padding="0" Margin="0,10">
+                            <Grid>
+                                <!-- Imagen de fondo -->
+                                <Image Source="{Binding Img}" Aspect="AspectFill" />
 
-                            <!-- Contenido del país y ubicación -->
-                            <Grid VerticalOptions="End" HorizontalOptions="FillAndExpand" Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                                <!-- Contenido de país y ubicación -->
+                                <Grid VerticalOptions="End" HorizontalOptions="FillAndExpand" Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
 
-                                <!-- País en la esquina inferior izquierda -->
-                                <Label Text="País"
-                                       TextColor="White"
-                                       FontSize="24"
-                                       HorizontalOptions="Start" 
-                                       VerticalOptions="End" 
-                                       Margin="0,0,0,5" />
+                                    <!-- País en la esquina inferior izquierda -->
+                                    <Label Text="{Binding Pais}"
+                                           TextColor="White"
+                                           FontSize="24"
+                                           HorizontalOptions="Start"
+                                           VerticalOptions="End"
+                                           Margin="0,0,0,5" />
 
-                                <!-- Ubicación en la esquina inferior derecha -->
-                                <Label Text="Ciudad"
-                                       TextColor="White"
-                                       FontSize="18"
-                                       HorizontalOptions="End" 
-                                       VerticalOptions="End" 
-                                       Margin="0,0,0,5" />
+                                    <!-- Ciudad en la esquina inferior derecha -->
+                                    <Label Text="{Binding Ciudad}"
+                                           TextColor="White"
+                                           FontSize="18"
+                                           HorizontalOptions="End"
+                                           VerticalOptions="End"
+                                           Margin="0,0,0,5" />
+                                </Grid>
                             </Grid>
-                        </Grid>
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnLugarTapped" CommandParameter="Lugar1" />
-                        </Frame.GestureRecognizers>
-                    </Frame>
-                    <!-- Fin del bloque de un lugar -->
-
-                    <!-- Agrega más bloques aquí -->
-                    <Frame HasShadow="True" CornerRadius="20" Padding="0" Margin="0,10">
-                        <Grid>
-                            <Image Source="machuPicchu.jpg" Aspect="AspectFill" />
-                            <Grid VerticalOptions="End" HorizontalOptions="FillAndExpand" Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Label Text="País 2"
-                                       TextColor="White"
-                                       FontSize="24"
-                                       HorizontalOptions="Start" 
-                                       VerticalOptions="End" 
-                                       Margin="0,0,0,5" />
-                                <Label Text="Ciudad 2"
-                                       TextColor="White"
-                                       FontSize="18"
-                                       HorizontalOptions="End" 
-                                       VerticalOptions="End" 
-                                       Margin="0,0,0,5" />
-                            </Grid>
-                        </Grid>
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnLugarTapped" CommandParameter="Lugar2" />
-                        </Frame.GestureRecognizers>
-                    </Frame>
-                    <Frame HasShadow="True" CornerRadius="20" Padding="0" Margin="0,10">
-                        <Grid>
-                            <Image Source="piramides.webp" Aspect="AspectFill" />
-                            <Grid VerticalOptions="End" HorizontalOptions="FillAndExpand" Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Label Text="País 2"
-                                       TextColor="White"
-                                       FontSize="24"
-                                       HorizontalOptions="Start" 
-                                       VerticalOptions="End" 
-                                       Margin="0,0,0,5" />
-                                <Label Text="Ciudad 2"
-                                       TextColor="White"
-                                       FontSize="18"
-                                       HorizontalOptions="End" 
-                                       VerticalOptions="End" 
-                                       Margin="0,0,0,5" />
-                            </Grid>
-                        </Grid>
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnLugarTapped" CommandParameter="Lugar2" />
-                        </Frame.GestureRecognizers>
-                    </Frame>
-
-                    <!-- Continúa agregando más elementos -->
-                </StackLayout>
-            </ScrollView>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

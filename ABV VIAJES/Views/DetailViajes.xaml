@@ -1,76 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ABV_VIAJES.Views.DetailViajes">
+             x:Class="ABV_VIAJES.Views.DetailViajes"
+             Title="Detalle Lugar">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20" BackgroundColor="#f9f9f9">
-            <!-- Título de la página -->
-            <Label Text="Detalles del Lugar"
-                   FontSize="24"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   Margin="0,10"
-                   TextColor="#007ACC"/>
-
-            <!-- Nombre de la empresa -->
-            <Label Text="ABV VIAJES"
-                   FontSize="18"
-                   FontAttributes="Italic"
-                   HorizontalOptions="Center"
-                   TextColor="#555"
-                   Margin="0,0,0,10" />
-
-            <!-- Separador -->
-            <BoxView HeightRequest="1" BackgroundColor="#007ACC" Margin="0,10" />
-
-            <!-- Detalles del lugar -->
-            <StackLayout Margin="0,10">
-                <Label Text="País"
-                       FontSize="30"
+                <!-- Título de la página -->
+                <Label Text="Detalles del Lugar"
+                       FontSize="24"
                        FontAttributes="Bold"
-                       TextColor="#007ACC"
-                       Margin="0,5" 
-                       HorizontalOptions="Center"/>
+                       HorizontalOptions="Center"
+                       Margin="0,10"
+                       TextColor="#007ACC"/>
 
-                <Label Text="Ciudad"
+                <!-- Nombre de la empresa -->
+                <Label Text="ABV VIAJES"
                        FontSize="18"
-                       FontAttributes="Bold"
-                       TextColor="#007ACC"
-                       Margin="0,5" 
-                       HorizontalOptions="Center"/>
+                       FontAttributes="Italic"
+                       HorizontalOptions="Center"
+                       TextColor="#555"
+                       Margin="0,0,0,10" />
 
-                <Label Text="Descripción"
-                       FontSize="16"
-                       TextColor="#333"
-                       Margin="0,5" 
-                       HorizontalOptions="Center"/>
-            </StackLayout>
-            
-            <!-- Imagen del lugar -->
-            <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Padding="0">
-                <Image x:Name="lugarImage"
-                       Source="piramides.webp"
-                       HeightRequest="200"
-                       Aspect="AspectFill"
-                       HorizontalOptions="FillAndExpand" />
-            </Frame>
+                <!-- Separador -->
+                <BoxView HeightRequest="1" BackgroundColor="#007ACC" Margin="0,10" />
 
-            <!-- WebView para mostrar el mapa -->
-            <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Padding="0" Margin="0,10">
-                <WebView x:Name="mapWebView"
-                         HeightRequest="400"
-                         VerticalOptions="FillAndExpand" />
-            </Frame>
-                <Button Text="Reservar Viaje"
+                <!-- Detalles del lugar -->
+                <StackLayout Margin="0,10">
+                    <Label Text="{Binding Pais}"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           TextColor="#007ACC"
+                           Margin="0,5" 
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="{Binding Ciudad}"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#007ACC"
+                           Margin="0,5" 
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="{Binding Descripcion}"
+                           FontSize="16"
+                           TextColor="#333"
+                           Margin="0,5" 
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <!-- Imagen del lugar -->
+                <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Padding="0">
+                    <Image x:Name="lugarImage"
+                           Source="{Binding Img}"
+                           HeightRequest="200"
+                           Aspect="AspectFill"
+                           HorizontalOptions="FillAndExpand"/>
+                </Frame>
+
+                <!-- WebView para mostrar el mapa -->
+                <Frame BackgroundColor="White" HasShadow="True" CornerRadius="10" Padding="0" Margin="0,10">
+                    <WebView x:Name="mapWebView"
+                             HeightRequest="400"
+                             VerticalOptions="FillAndExpand" />
+                </Frame>
+
+                <Button Text="Reservar"
                         BackgroundColor="#1ABC9C"
                         TextColor="White"
                         FontSize="Medium"
                         FontAttributes="Bold"
                         Margin="0,20,0,0"
                         HorizontalOptions="Center"
-                        CornerRadius="25" />
+                        CornerRadius="25" 
+                        Clicked="OnRegresarClicked"/>
             </StackLayout>
-       </ScrollView>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -12,10 +12,18 @@ namespace ABV_VIAJES.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailViajes : ContentPage
     {
-        public DetailViajes(string googleMapsLink)
+        public DetailViajes()
         {
             InitializeComponent();
-            mapWebView.Source = googleMapsLink;
+        }
+        public void SetMapLocation(string googleMapsLink)
+        {
+            mapWebView.Source = googleMapsLink; // Asigna el enlace de Google Maps
+        }
+
+        private async void OnRegresarClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
     }
 }

@@ -56,7 +56,8 @@
                             Margin="0,10,0,0"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
-                            CornerRadius="25" />
+                            CornerRadius="25" 
+                            Clicked="OnViajeClicked"/>
                 </StackLayout>
             </ScrollView>
         </Grid>
