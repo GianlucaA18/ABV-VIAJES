@@ -18,5 +18,10 @@ namespace ABV_VIAJES.Views
             InitializeComponent();
             mapWebView.Source = googleMapsLink;
         }
+
+        private async void OnRegresarClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

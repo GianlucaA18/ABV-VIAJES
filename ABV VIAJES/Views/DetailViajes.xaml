@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ABV_VIAJES.Views.DetailViajes"
-             Title="Detalle Lugar">
+             Title="Detalle del lugar">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20" BackgroundColor="#f9f9f9">
